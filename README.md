@@ -7,17 +7,15 @@
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `carthage update` from the Example directory first.
 
 ## Requirements
 
-## Installation
-
-SXBSegmentedControl is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+## 集成方式 Carthage
 
 ```ruby
-pod 'SXBSegmentedControl'
+github "MichleMin/SXBSegmentedControl" "master"
+carthage update
 ```
 
 ## Author
