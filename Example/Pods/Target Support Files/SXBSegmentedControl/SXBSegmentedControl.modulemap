@@ -1,6 +1,0 @@
-framework module SXBSegmentedControl {
-  umbrella header "SXBSegmentedControl-umbrella.h"
-
-  export *
-  module * { export * }
-}

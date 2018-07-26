@@ -1,42 +1,17 @@
-#
-# Be sure to run `pod lib lint SXBSegmentedControl.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
 
 Pod::Spec.new do |s|
-  s.name             = 'SXBSegmentedControl'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SXBSegmentedControl.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/dev_min/SXBSegmentedControl'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.name         = "SXBSegmentedControl"
+  s.version      = "0.1.0"
+  s.summary      = "横向滑动导航栏菜单"
+  s.description  = "横向滑动导航栏菜单"
+  s.homepage     = "https://github.com/MichleMin/SXBSegmentedControl"
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'dev_min' => '286888980@qq.com' }
-  s.source           = { :git => 'https://github.com/dev_min/SXBSegmentedControl.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'MichleMin' => '286888980@qq.com' }
+  s.source           = { :git => 'https://github.com/MichleMin/SXBSegmentedControl.git', :tag => s.version.to_s }
+  s.ios.deployment_target = '9.0'
+  s.source_files  = "SXBSegmentedControl/Sources/*.{swift,h}"
+  s.frameworks = 'UIKit'
+  s.requires_arc = true
 
-  s.ios.deployment_target = '8.0'
-
-  s.source_files = 'SXBSegmentedControl/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SXBSegmentedControl' => ['SXBSegmentedControl/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
