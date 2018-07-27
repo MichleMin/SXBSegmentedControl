@@ -7,7 +7,8 @@
 
 import UIKit
 
-public struct ElegantSlideMenuDto {
+/** 使用title+view方式作为model */
+public struct SXBSegmentedControlModel{
     /** 对应标签标题 */
     public var title: String!
     /** 对应标签视图 */
@@ -22,3 +23,5 @@ public struct ElegantSlideMenuDto {
         self.view = view
     }
 }
+
+

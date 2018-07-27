@@ -17,7 +17,34 @@
 		CBA071602108945700968AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA071592108945700968AD7 /* Main.storyboard */; };
 		CBA071612108945700968AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0715B2108945700968AD7 /* AppDelegate.swift */; };
 		CBA071622108945700968AD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBA0715C2108945700968AD7 /* Info.plist */; };
+		CBA837AB21096BDC00B21549 /* SXBSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; };
+		CBA837AC21096BDC00B21549 /* SXBSegmentedControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CBA837B6210ACDDB00B21549 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA837B5210ACDDB00B21549 /* DemoViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CBA837AD21096BDC00B21549 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CBA07122210889BF00968AD7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CBA0712A210889BF00968AD7;
+			remoteInfo = SXBSegmentedControl;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBA837AF21096BDC00B21549 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CBA837AC21096BDC00B21549 /* SXBSegmentedControl.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SXBSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,6 +59,7 @@
 		CBA0715A2108945700968AD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CBA0715B2108945700968AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBA0715C2108945700968AD7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBA837B5210ACDDB00B21549 /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA837AB21096BDC00B21549 /* SXBSegmentedControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +87,7 @@
 				CBA071542108945700968AD7 /* Demo */,
 				CBA0712D210889BF00968AD7 /* SXBSegmentedControl */,
 				CBA0712C210889BF00968AD7 /* Products */,
+				CBA837A921096BD100B21549 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				CBA071552108945700968AD7 /* ViewController.swift */,
+				CBA837B5210ACDDB00B21549 /* DemoViewController.swift */,
 				CBA071562108945700968AD7 /* Assets.xcassets */,
 				CBA071572108945700968AD7 /* LaunchScreen.storyboard */,
 				CBA071592108945700968AD7 /* Main.storyboard */,
@@ -109,6 +140,13 @@
 			);
 			path = Demo;
 			sourceTree = SOURCE_ROOT;
+		};
+		CBA837A921096BD100B21549 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -149,10 +187,13 @@
 				CBA0713621088A3A00968AD7 /* Sources */,
 				CBA0713721088A3A00968AD7 /* Frameworks */,
 				CBA0713821088A3A00968AD7 /* Resources */,
+				CBA837AF21096BDC00B21549 /* Embed Frameworks */,
+				CBA837B021096C9C00B21549 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CBA837AE21096BDC00B21549 /* PBXTargetDependency */,
 			);
 			name = SXBSegmentedControlDemo;
 			productName = SXBSegmentedControlDemo;
@@ -219,6 +260,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CBA837B021096C9C00B21549 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SXBSegmentedControl.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CBA07126210889BF00968AD7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -233,12 +291,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA837B6210ACDDB00B21549 /* DemoViewController.swift in Sources */,
 				CBA071612108945700968AD7 /* AppDelegate.swift in Sources */,
 				CBA0715D2108945700968AD7 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CBA837AE21096BDC00B21549 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CBA0712A210889BF00968AD7 /* SXBSegmentedControl */;
+			targetProxy = CBA837AD21096BDC00B21549 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CBA071572108945700968AD7 /* LaunchScreen.storyboard */ = {
@@ -436,8 +503,10 @@
 		CBA0714A21088A3B00968AD7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -453,8 +522,10 @@
 		CBA0714B21088A3B00968AD7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = "$(SRCROOT)/Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
