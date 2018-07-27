@@ -104,6 +104,8 @@ import UIKit
     fileprivate var currentIndex: Int = 0
     /** 传入数组类型 */
     fileprivate var isVCType:Bool = false
+    fileprivate var subviewArray: [UIView] = []
+    fileprivate var currentSubViewArray: [UIView] = []
     
     public init(frame:CGRect,
                 items: [SXBSegmentedControlModel],
@@ -217,10 +219,20 @@ extension SXBSegmentedControl {
                 let rootViewOffSeX = CGFloat(i)*width
                 model.view.frame.origin = CGPoint(x: rootViewOffSeX, y: 0)
                 model.view.frame.size = CGSize(width: width, height: height-topScrollViewHeight)
-                rootScrollView.addSubview(model.view)
+                model.view.tag = i+1001
+                subviewArray.append(model.view)
             }
         } else {
-            
+            return
+        }
+        if defaultIndex == 0 {
+            rootScrollView.addSubview(subviewArray[defaultIndex])
+            rootScrollView.addSubview(subviewArray[defaultIndex+1])
+            rootScrollView.addSubview(subviewArray[defaultIndex+2])
+        } else {
+            rootScrollView.addSubview(subviewArray[defaultIndex])
+            rootScrollView.addSubview(subviewArray[defaultIndex+1])
+            rootScrollView.addSubview(subviewArray[defaultIndex-1])
         }
         caclutaTopScrollViewSize(widthArr: itemWidthArray)
         rootScrollView.contentSize = CGSize(width: width*CGFloat(viewArray.count), height: 0)
@@ -285,9 +297,13 @@ extension SXBSegmentedControl {
     /** 选中按钮时，所要执行的动作 */
     @objc private func btnAction(sender: UIButton) {
         rootScrollView.setContentOffset(CGPoint(x: CGFloat(sender.tag)*self.frame.size.width, y: 0), animated: false)
-        if !selectedIndexs.contains(sender.tag) && currentIndex != sender.tag {
-            currentIndex = sender.tag
-            selectedIndexs.append(sender.tag)
+        currentIndex = sender.tag
+        tapEvent()
+    }
+    
+    private func tapEvent() {
+        if !selectedIndexs.contains(currentIndex) {
+            selectedIndexs.append(currentIndex)
             if let refreshDataBlock = refreshDataBlock {
                 refreshDataBlock(currentIndex)
             }
@@ -295,7 +311,7 @@ extension SXBSegmentedControl {
         scrollBar.frame.origin.x = itemOffSetXArray[currentIndex]
         scrollBar.frame.size.width = itemWidthArray[currentIndex]
         btnArray.forEach({ (btn) in
-            if btn.tag != sender.tag{
+            if btn.tag != currentIndex{
                 btn.isSelected = false
             }else{
                 btn.isSelected = true
@@ -303,6 +319,15 @@ extension SXBSegmentedControl {
         })
         if isVCType {
             vcArr[currentIndex].viewDidAppear(true)
+        }
+        if !rootScrollView.subviews.contains(subviewArray[currentIndex]) {
+            rootScrollView.addSubview(subviewArray[currentIndex])
+        }
+        if currentIndex < viewArray.count && !rootScrollView.subviews.contains(subviewArray[currentIndex+1])  {
+            rootScrollView.addSubview(subviewArray[currentIndex+1])
+        }
+        if currentIndex > 0 && !rootScrollView.subviews.contains(subviewArray[currentIndex-1]){
+            rootScrollView.addSubview(subviewArray[currentIndex-1])
         }
     }
     
@@ -319,24 +344,7 @@ extension SXBSegmentedControl: UIScrollViewDelegate {
     
     public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView){
         if scrollView == rootScrollView {
-            scrollBar.frame.origin.x = itemOffSetXArray[currentIndex]
-            scrollBar.frame.size.width = itemWidthArray[currentIndex]
-            btnArray.forEach({ (btn) in
-                if btn.tag != currentIndex{
-                    btn.isSelected = false
-                }else{
-                    btn.isSelected = true
-                }
-            })
-            if !selectedIndexs.contains(currentIndex) {
-                selectedIndexs.append(currentIndex)
-                if let refreshDataBlock = refreshDataBlock {
-                    refreshDataBlock(currentIndex)
-                }
-            }
-            if isVCType {
-                vcArr[currentIndex].viewDidAppear(true)
-            }
+            tapEvent()
         }
     }
 }

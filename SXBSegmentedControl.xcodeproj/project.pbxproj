@@ -10,13 +10,11 @@
 		CBA07130210889BF00968AD7 /* SXBSegmentedControl.h in Headers */ = {isa = PBXBuildFile; fileRef = CBA0712E210889BF00968AD7 /* SXBSegmentedControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CBA0715021088E2900968AD7 /* SXBSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0714E21088E2800968AD7 /* SXBSegmentedControl.swift */; };
 		CBA0715121088E2900968AD7 /* SXBSegmentedControlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0714F21088E2900968AD7 /* SXBSegmentedControlModel.swift */; };
-		CBA0715321088F5200968AD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBA0715221088F5200968AD7 /* Info.plist */; };
 		CBA0715D2108945700968AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA071552108945700968AD7 /* ViewController.swift */; };
 		CBA0715E2108945700968AD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBA071562108945700968AD7 /* Assets.xcassets */; };
 		CBA0715F2108945700968AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA071572108945700968AD7 /* LaunchScreen.storyboard */; };
 		CBA071602108945700968AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA071592108945700968AD7 /* Main.storyboard */; };
 		CBA071612108945700968AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0715B2108945700968AD7 /* AppDelegate.swift */; };
-		CBA071622108945700968AD7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBA0715C2108945700968AD7 /* Info.plist */; };
 		CBA837AB21096BDC00B21549 /* SXBSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; };
 		CBA837AC21096BDC00B21549 /* SXBSegmentedControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBA837B6210ACDDB00B21549 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA837B5210ACDDB00B21549 /* DemoViewController.swift */; };
@@ -243,7 +241,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA0715321088F5200968AD7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBA071622108945700968AD7 /* Info.plist in Resources */,
 				CBA071602108945700968AD7 /* Main.storyboard in Resources */,
 				CBA0715E2108945700968AD7 /* Assets.xcassets in Resources */,
 				CBA0715F2108945700968AD7 /* LaunchScreen.storyboard in Resources */,

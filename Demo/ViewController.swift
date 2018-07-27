@@ -61,8 +61,9 @@ public extension UIViewController {
         let titles = ["VC测试","VC测试","VC测试","VC测试","VC测试","VC测试"]
         var vcArr = [UIViewController]()
         for i in 0..<titles.count {
-            if i == 1 {
+            if i == 4 {
                 let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DemoViewController")
+                vc.title = "测试页面"
                 vcArr.append(vc)
             } else {
                 let vc = UIViewController()
