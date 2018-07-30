@@ -225,11 +225,14 @@ extension SXBSegmentedControl {
         } else {
             return
         }
+        
         if defaultIndex == 0 {
             rootScrollView.addSubview(subviewArray[defaultIndex])
             rootScrollView.addSubview(subviewArray[defaultIndex+1])
-            rootScrollView.addSubview(subviewArray[defaultIndex+2])
-        } else {
+        } else if defaultIndex == subviewArray.count-1 {
+            rootScrollView.addSubview(subviewArray[defaultIndex])
+            rootScrollView.addSubview(subviewArray[defaultIndex-1])
+        } else if defaultIndex < subviewArray.count-1 {
             rootScrollView.addSubview(subviewArray[defaultIndex])
             rootScrollView.addSubview(subviewArray[defaultIndex+1])
             rootScrollView.addSubview(subviewArray[defaultIndex-1])
