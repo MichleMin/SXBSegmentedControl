@@ -18,6 +18,8 @@
 		CBA837AB21096BDC00B21549 /* SXBSegmentedControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; };
 		CBA837AC21096BDC00B21549 /* SXBSegmentedControl.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0712B210889BF00968AD7 /* SXBSegmentedControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CBA837B6210ACDDB00B21549 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA837B5210ACDDB00B21549 /* DemoViewController.swift */; };
+		CBC200C321101323003EB466 /* SXBSegmentedControlModel.swift in Headers */ = {isa = PBXBuildFile; fileRef = CBA0714F21088E2900968AD7 /* SXBSegmentedControlModel.swift */; settings = {ATTRIBUTES = (Public, ); }; };
+		CBC200C421101323003EB466 /* SXBSegmentedControl.swift in Headers */ = {isa = PBXBuildFile; fileRef = CBA0714E21088E2800968AD7 /* SXBSegmentedControl.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBA07130210889BF00968AD7 /* SXBSegmentedControl.h in Headers */,
+				CBC200C321101323003EB466 /* SXBSegmentedControlModel.swift in Headers */,
+				CBC200C421101323003EB466 /* SXBSegmentedControl.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
